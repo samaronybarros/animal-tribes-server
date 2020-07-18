@@ -1,6 +1,6 @@
-import { NextFunction } from 'express'
 import * as mongoose from 'mongoose'
 import * as bcrypt from 'bcrypt'
+
 import { Tribe } from './tribe-model'
 
 const Schema = mongoose.Schema
@@ -22,7 +22,7 @@ const WarriorSchema = new Schema(
   { timestamps: true }
 )
 
-WarriorSchema.pre('save', function(next: NextFunction): void {
+WarriorSchema.pre('save', function(next: mongoose.HookNextFunction): void {
   const warrior: any = this
 
   if (!warrior.password) {
