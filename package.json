@@ -42,7 +42,8 @@
     "yup": "^0.28.3"
   },
   "scripts": {
-    "start": "concurrently --kill-others 'npm run tsc:watch' 'npm run dev'",
+    "start": "node build/src/index.js",
+    "start:dev": "concurrently --kill-others 'npm run tsc:watch' 'npm run dev'",
     "dev": "nodemon build/src/index.js",
     "lint": "npx tslint --init",
     "tsc": "./node_modules/.bin/tsc",
