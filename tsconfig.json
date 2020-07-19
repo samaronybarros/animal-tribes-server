@@ -16,6 +16,7 @@
     "./src/**/__fixtures__/**/*",
     "./src/**/*.test.js",
     "./src/**/*.spec.js",
+    "./src/tests",
     "node_modules",
     "dist"
   ]
