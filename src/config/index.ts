@@ -5,6 +5,7 @@ type Config = {
   serverPort: number
   serverDatabase: string
   jwtSecret: string
+  whitelist?: string
 }
 
 const config: Config = require(`./${env}`).default

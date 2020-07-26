@@ -16,7 +16,7 @@ const expressPlayground = require('graphql-playground-middleware-express')
 connectDb()
 
 const corsOptions = {
-  origin: config.serverUrl,
+  origin: config.whitelist,
   optionsSuccessStatus: 200,
 }
 
