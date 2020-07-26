@@ -20,7 +20,7 @@ const corsOptions = {
   optionsSuccessStatus: 200,
 }
 
-app.use(cors(corsOptions))
+app.use(cors())
 
 // bind express with graphql
 app.use(
@@ -31,7 +31,11 @@ app.use(
   })
 )
 
-app.get('/playground', expressPlayground({ endpoint: '/graphql' }))
+app.get(
+  '/playground',
+  cors(corsOptions),
+  expressPlayground({ endpoint: '/graphql' })
+)
 
 app.listen(config.serverPort, () => {
   console.log(`now listening for requests on port ${config.serverPort}`)
