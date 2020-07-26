@@ -15,7 +15,12 @@ const expressPlayground = require('graphql-playground-middleware-express')
 
 connectDb()
 
-app.use(cors())
+const corsOptions = {
+  origin: config.serverUrl,
+  optionsSuccessStatus: 200,
+}
+
+app.use(cors(corsOptions))
 
 // bind express with graphql
 app.use(
